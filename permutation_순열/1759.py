@@ -18,11 +18,11 @@
 
 # 풀이1
 # 먼저 암호조합을 전부 생성해놓고 그걸 검사때리니 시간이 더걸리는듯
-import sys
+import sys, time
 inputLC = sys.stdin.readline().rstrip()
 alphabet_count_in_password, alphabet_count = map(int, inputLC.split())
 alphabets = sys.stdin.readline().rstrip().split()
-
+start_time = time.time()
 # print(alphabet_count_in_password, alphabet_count, alphabets)
 
 from itertools import combinations
@@ -43,6 +43,8 @@ for password in words:
     if vow >= 1 and con >= 2:
         print(''.join(list(password)))
 
+end_time = time.time()
+print("time: " , end_time - start_time)
     
 
 # 입력
